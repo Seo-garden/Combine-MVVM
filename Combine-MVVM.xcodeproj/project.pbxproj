@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		622B77772D7F1F6A0047436F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 622B774D2D7ECE510047436F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 622B77542D7ECE510047436F;
+			remoteInfo = "Combine-MVVM";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		622B77552D7ECE510047436F /* Combine-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combine-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		622B77712D7F1F6A0047436F /* Combine-MVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Combine-MVVMUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +40,22 @@
 			path = "Combine-MVVM";
 			sourceTree = "<group>";
 		};
+		622B77722D7F1F6A0047436F /* Combine-MVVMUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Combine-MVVMUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		622B77522D7ECE510047436F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622B776E2D7F1F6A0047436F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				622B77572D7ECE510047436F /* Combine-MVVM */,
+				622B77722D7F1F6A0047436F /* Combine-MVVMUITests */,
 				622B77562D7ECE510047436F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				622B77552D7ECE510047436F /* Combine-MVVM.app */,
+				622B77712D7F1F6A0047436F /* Combine-MVVMUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +108,29 @@
 			productReference = 622B77552D7ECE510047436F /* Combine-MVVM.app */;
 			productType = "com.apple.product-type.application";
 		};
+		622B77702D7F1F6A0047436F /* Combine-MVVMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 622B77792D7F1F6A0047436F /* Build configuration list for PBXNativeTarget "Combine-MVVMUITests" */;
+			buildPhases = (
+				622B776D2D7F1F6A0047436F /* Sources */,
+				622B776E2D7F1F6A0047436F /* Frameworks */,
+				622B776F2D7F1F6A0047436F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				622B77782D7F1F6A0047436F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				622B77722D7F1F6A0047436F /* Combine-MVVMUITests */,
+			);
+			name = "Combine-MVVMUITests";
+			packageProductDependencies = (
+			);
+			productName = "Combine-MVVMUITests";
+			productReference = 622B77712D7F1F6A0047436F /* Combine-MVVMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +143,10 @@
 				TargetAttributes = {
 					622B77542D7ECE510047436F = {
 						CreatedOnToolsVersion = 16.1;
+					};
+					622B77702D7F1F6A0047436F = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 622B77542D7ECE510047436F;
 					};
 				};
 			};
@@ -113,12 +165,20 @@
 			projectRoot = "";
 			targets = (
 				622B77542D7ECE510047436F /* Combine-MVVM */,
+				622B77702D7F1F6A0047436F /* Combine-MVVMUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		622B77532D7ECE510047436F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622B776F2D7F1F6A0047436F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +195,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		622B776D2D7F1F6A0047436F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		622B77782D7F1F6A0047436F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 622B77542D7ECE510047436F /* Combine-MVVM */;
+			targetProxy = 622B77772D7F1F6A0047436F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		622B77692D7ECE520047436F /* Debug */ = {
@@ -313,6 +388,40 @@
 			};
 			name = Release;
 		};
+		622B777A2D7F1F6A0047436F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RN4W7LDT7Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.Seo-garden.Combine-MVVMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Combine-MVVM";
+			};
+			name = Debug;
+		};
+		622B777B2D7F1F6A0047436F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RN4W7LDT7Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.Seo-garden.Combine-MVVMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Combine-MVVM";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -330,6 +439,15 @@
 			buildConfigurations = (
 				622B77692D7ECE520047436F /* Debug */,
 				622B776A2D7ECE520047436F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		622B77792D7F1F6A0047436F /* Build configuration list for PBXNativeTarget "Combine-MVVMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				622B777A2D7F1F6A0047436F /* Debug */,
+				622B777B2D7F1F6A0047436F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
