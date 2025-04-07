@@ -30,26 +30,56 @@ class QuoteViewModel {
     }
     
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
-        //절대 실패할 가능성이 없음
-                input.sink { [weak self] event in
-                    switch event {
-                    case .viewDidAppear, .refreshButtonDidTap:
-                        self?.handlegetRandomQuote()
+            input.sink { [weak self] event in
+                switch event {
+                case .viewDidAppear, .refreshButtonDidTap:
+                    Task {
+                        await self?.handleGetRandomQuote()
                     }
-                }.store(in: &cancellabels)
-                return output.eraseToAnyPublisher()
+                }
+            }.store(in: &cancellabels)
+            return output.eraseToAnyPublisher()
+        }
+    
+
+    
+    private func handleGetRandomQuote() async {
+        output.send(.toggleButton(isEnabled: false))
+        
+        do {
+            let quote = try await quoteServiceType.getRandomQuote()
+            output.send(.fetchQuoteDidSucced(quote: quote))
+        } catch {
+            output.send(.fetchQuoteDidFail(error: error))
+        }
+        
+        output.send(.toggleButton(isEnabled: true))
     }
     
-    private func handlegetRandomQuote() {
-        output.send(.toggleButton(isEnabled: false))
-        quoteServiceType.getRandomQuote()
-            .sink { [weak self] completion in
-                self?.output.send(.toggleButton(isEnabled: true))
-                if case .failure(let error) = completion {
-                    self?.output.send(.fetchQuoteDidFail(error: error))
-                }
-            } receiveValue: { [weak self] quote in
-                self?.output.send(.fetchQuoteDidSucced(quote: quote))
-            }.store(in: &cancellabels)
-    }
+//    func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
+//        //절대 실패할 가능성이 없음
+//                input.sink { [weak self] event in
+//                    switch event {
+//                    case .viewDidAppear, .refreshButtonDidTap:
+//                        self?.handlegetRandomQuote()
+//                    }
+//                }.store(in: &cancellabels)
+//                return output.eraseToAnyPublisher()
+//    }
+    
+
+//    private func handlegetRandomQuote() {
+//        output.send(.toggleButton(isEnabled: false))
+//        quoteServiceType.getRandomQuote()
+//            .sink { [weak self] completion in
+//                self?.output.send(.toggleButton(isEnabled: true))
+//                if case .failure(let error) = completion {
+//                    self?.output.send(.fetchQuoteDidFail(error: error))
+//                }
+//            } receiveValue: { [weak self] quote in
+//                self?.output.send(.fetchQuoteDidSucced(quote: quote))
+//            }.store(in: &cancellabels)
+//    }
+    
+    
 }
